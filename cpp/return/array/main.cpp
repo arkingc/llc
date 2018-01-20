@@ -9,7 +9,8 @@ using namespace std;
 	 1)typedef
 	 2)using
 	2.decltype
-	3.尾置返回类型
+	3.尾置返回类型：auto func(parameter_list) -> type(*)[dimension]
+		为了表示真正的返回类型跟在形参列表之后，在函数返回类型的位置放置一个auto
 	4.type (*func(parameter_list)) [dimension]
 		func(parameter_list)：      表示调用func时需要parameter_list参数
 		(*func(parameter_list))：   表示可以对调用结果指向解引用
