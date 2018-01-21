@@ -56,6 +56,7 @@ int main()
 fcnT1* fcnPtr1(int i)
 {
 	//&可以去掉
+	//当把函数名作为一个值使用时，该函数自动地转换成指针
 	return i % 2 ? &sumLength : &largerLenght;
 }
 
