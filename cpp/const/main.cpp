@@ -4,12 +4,15 @@ using namespace std;
 
 /******************
  4.const与函数
- 实参初始化形参时，顶层const会被忽略，所以调用fcn时会出错
+ 实参初始化形参时，顶层const会被忽略，所以调用fcn或fcn1时会出错
+ 是重复声明，不算重载
  *****************/
 
 void fcn(const int i);
 void fcn(int i);
 
+void fcn1(int *const i);
+void fcn1(int *i);
 
 int main(){
 
