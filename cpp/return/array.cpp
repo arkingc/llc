@@ -8,25 +8,34 @@ using namespace std;
 	1.
 	 1)typedef
 	 2)using
-	2.decltype
+	2.decltype（用于获取数组类型）
 	3.尾置返回类型：auto func(parameter_list) -> type(*)[dimension]
 		为了表示真正的返回类型跟在形参列表之后，在函数返回类型的位置放置一个auto
+		*表明返回的是个指针
+		[dimension]表明是个数组，大小为dimension
+		type是数组元素的类型
 	4.type (*func(parameter_list)) [dimension]
 		func(parameter_list)：      表示调用func时需要parameter_list参数
-		(*func(parameter_list))：   表示可以对调用结果指向解引用
-		(*func(parameter_list)) [dimension]：表示解引用将得到大小是dimension的数组
+		(*func(parameter_list))：   表示可以对调用结果执行解引用，说明结果是一个指针
+		(*func(parameter_list)) [dimension]：表示指针指向大小为dimension的数组
 		type (*func(parameter_list)) [dimension]：表示数组元素的类型为type
 *********************/
+
+//提供给decltype，获取数组类型
 
 int odd[] = {1,3,5,7,9};//奇数数组
 int even[] = {0,2,4,6,8};//偶数数组
 
-//两者等价
-typedef int arrT1[5];
-using arrT2 = int[5];
+//数组类型别名
+
+typedef int arrT1[5];//arrT1是数组类型
+using arrT2 = int[5];//arrT2是(指向)数组(的)指针
+
+//返回(指向)数组(的)指针的函数声明
+
 arrT1* arrPtr1(int i);//1.typedef/using
 
-decltype(odd) *arrPtr2(int i);//2.decltype，C++11
+decltype(odd) *arrPtr2(int i);//2.decltype，C++11。必须要有*，不然就是返回一个数组了
 auto arrPtr3(int i) -> int(*)[5];//3.尾置返回类型，C++11
 int (*arrPtr4(int)) [5];//4
 
