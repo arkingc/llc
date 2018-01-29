@@ -103,8 +103,3 @@ StrVec & StrVec::operator=(const StrVec &rhs)
     first_free = cap = data.second;
     return *this;
 }
-
-int main()
-{
-    StrVec v;
-}
