@@ -19,10 +19,8 @@ int main()
     string test_str = "a.cc b.cpp c.l .cpp ";
 
     /*
-     * match对象(匹配类型的对象)有两个名为prefix和suffix的成员，
-     * 分别表示输入序列中当前匹配之前和之后部分的ssub_match对象。
-     * 一个ssub_match对象有两个名为str和length的成员，分别返回
-     * 匹配的string和该string的大小
+     * 后接'?'的组件是可选的，因此即使模式匹配成功，后接'?'的子表达式也不一定是匹配的
+     * 因此，对于后接'?'的子表达式，如果没有匹配，则matched成员为false;
      */
     for(sregex_iterator it(test_str.begin(),test_str.end(),r),end_it;
         it != end_it; ++it) {
