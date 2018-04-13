@@ -7,6 +7,7 @@ using namespace std;
  * 2）顶层const会被忽略
  * 3）作用于数组或函数时，并不会执行向指针的标准类型转换，即对数组a执行type(a)
  *    得到的是数组类型而非指针类型
+ * 4）当typeid作用于指针时（而非指针所指的对象），返回的结果是该指针的静态编译时类型
  ***************************************************************/
 
 struct base{
@@ -47,6 +48,7 @@ int main(){
     childvirtual cv;
     basevirtual *pbv = &bv;
     basevirtual *pcv = &cv;
+    //当typeid作用于指针时（而非指针所指的对象），返回的结果是该指针的静态编译时类型
     cout << typeid(pbv).name() << endl;     //P11basevirtual
     cout << typeid(pcv).name() << endl;     //P11basevirtual
     //运行时求得
