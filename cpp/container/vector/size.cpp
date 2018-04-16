@@ -28,7 +28,7 @@ int main()
     v.resize(6);    //test constructor（3次）
     cout << "capacity:" << v.capacity() << "  size:" << v.size() << endl;   //capacity:8  size:6
 
-    v.reserve(7);   //reserve只能减小不能增大？
+    v.reserve(7);   //reserve只能增大不能减小？
     cout << "capacity:" << v.capacity() << "  size:" << v.size() << endl;   //capacity:8  size:6
 
     v.resize(3);    //会释放3个对象，调用3次析构函数
