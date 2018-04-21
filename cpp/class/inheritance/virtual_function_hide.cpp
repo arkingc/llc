@@ -20,6 +20,7 @@ public:
  */
 class B : public A{
 public:
+    /*虽未明写virtual，但其实是virtual*/
     void a() {cout << "a() in B" << endl;}
     void b() {cout << "b() in B" << endl;}
 };
@@ -32,6 +33,7 @@ public:
  */
 class C : public A{
 public:
+    /*虽未明写virtual，但其实是virtual*/
     void a() {cout << "a() in C" << endl;}
     void b() {cout << "b() in C" << endl;}
 };
@@ -46,6 +48,7 @@ public:
  */
 class D : public B,public C{
 public:
+    /*虽未明写virtual，但其实是virtual*/
     void a() {cout << "a() in D" << endl;}
     void d() {cout << "d() in D" << endl;}
 };
